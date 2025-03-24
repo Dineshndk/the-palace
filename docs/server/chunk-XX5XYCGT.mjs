@@ -1,0 +1,2 @@
+import './polyfills.server.mjs';
+import{a as p,b as r,c as i,d as n,e as m,j as a,m as f,o as s,p as c,s as l,y as d}from"./chunk-X53DNMB2.mjs";var o=class e{title="palace";static \u0275fac=function(t){return new(t||e)};static \u0275cmp=p({type:e,selectors:[["app-root"]],standalone:!0,features:[m],decls:3,vars:0,template:function(t,R){t&1&&(r(0,"div")(1,"h2"),n(2,"The palace"),i()())}})};var u=[];var C={providers:[a({eventCoalescing:!0}),d(u),c()]};var A={providers:[l()]},g=f(C,A);var x=()=>s(o,g),q=x;export{q as a};
