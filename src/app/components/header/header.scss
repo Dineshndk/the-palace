@@ -1,0 +1,25 @@
+.scHeader{
+    //height: 80px;
+    
+    padding: 10px 10px;
+    display: flex;
+    background-color:antiquewhite;
+}
+.scMenuContainer{
+    display: flex;
+    justify-content: center;
+}
+.scNavItem{
+    padding: 10px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.scNavItem:hover{
+    background-color: #ad7575;
+}
+
+.scDishImg{    
+    width: 45px;
+    height: 45px;
+    margin-top: 4px;
+}
