@@ -1,6 +1,137 @@
+.scHome {
+  background-color: #efefef;
+}
 
-.scDishImg{    
-    width: 30px;
-    height: 30px;
-    margin-top: 4px;
+.scDishImg {
+  width: 30px;
+  height: 30px;
+  margin-top: 4px;
+}
+
+.scTitle {
+  position: absolute;
+  width: max-content;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: transparent;
+  background-image: linear-gradient(#fff, #fff);
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-position: -750px 0;
+  animation: title 5s infinite alternate;
+}
+
+.scIntroImg {
+  border-radius: 10px;
+  width: 350px;
+  height: 350px;
+}
+
+p {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #666666;
+  margin: 0px;
+}
+
+.scOurStory {
+  cursor: pointer;
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.scOurStory:hover {
+  color: red !important;
+}
+
+.scIndianRes {
+  font-family: Courgette;
+}
+
+.scIntroImgContainer {
+  width: calc(100% - 160px);
+  min-height: 120px;
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.scDinninImgContainer {
+  /* width: 450px; */
+  max-height: 260px;
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.scFirstMenu{
+  max-height: 530px !important;
+}
+
+.scOurMenu {
+ //ackground-image: url('assets/images/bg-intro-01.png');
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.scMenuItem {
+  position: relative;
+}
+
+.scBtnMenu {
+  background-color: #fff;
+  color: black;
+  min-width: 120px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  border: none;
+  
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.scBtnMenu:hover {
+  background-color: red;
+  color: white;
+}
+
+.scIntroImgContainer>img {
+  /* border-radius: 10px; */
+  width: 100%;
+  transition: all 1.6s;
+}
+
+.scIntroImgContainer>img:hover {
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+
+.scDinninImgContainer>img {
+  /* border-radius: 10px; */
+  width: 100%;
+  transition: all 1.6s;
+}
+
+.scDinninImgContainer>img:hover {
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+@keyframes title {
+  100% {
+    background-position: 0 0;
+  }
 }

@@ -7,6 +7,7 @@ import { Pagenotfound } from './components/pagenotfound/pagenotfound';
 import { Menu } from './components/menu/menu';
 import { Reservation } from './components/reservation/reservation';
 import { Orderonline } from './components/orderonline/orderonline';
+import { Booking } from './components/booking/booking';
 
 export const routes: Routes = [
     {
@@ -26,10 +27,12 @@ export const routes: Routes = [
         path:"reservation",component:Reservation
     },{
         path:"orderonline",component:Orderonline
+    },{
+        path:"booking",component:Booking
     }
     ,
     {
-        path:"**",component:Pagenotfound
+        path:"**",component:Home
     }
 
 ];

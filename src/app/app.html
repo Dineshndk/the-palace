@@ -1,4 +1,11 @@
-<app-header></app-header>
-<div class="container scMaincontent">
+<app-header class="scHeader" [bIsScrollZero]="bIsScrollZero" [bIsAppScreen]="bIsAppScreen" [CurrentURL]="CurrentURL"></app-header>
+<div class="container1 scMaincontent1" style="height: 1000px;"
+>
   <router-outlet />
 </div>
+<div>
+  <span *ngIf="!bIsScrollZero" class="btn btn-primary scScrollBtn" (click)="goToScroll()">
+    <i class="fa-solid fa-angles-up"></i> </span>
+</div>
+
+<ngx-spinner size="medium"></ngx-spinner>

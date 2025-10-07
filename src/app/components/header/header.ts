@@ -1,5 +1,5 @@
 import { CommonModule, NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -15,6 +15,10 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class Header {
 
+  @Input({required:true}) bIsScrollZero:boolean=true;
+  @Input({required:true}) bIsAppScreen:boolean=true;
+  @Input({required:true}) CurrentURL:string="";
+
   public arApps:any[] = [{"name": "Home", "path":"/home"},
     {"name": "Menu", "path":"/menu"},
     {"name": "Order online", "path":"orderonline"},
@@ -26,7 +30,7 @@ export class Header {
    *
    */
   constructor(private router:Router) {
-    
-    
+   
   }
+
 }

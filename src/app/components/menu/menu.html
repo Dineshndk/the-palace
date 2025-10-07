@@ -1,4 +1,26 @@
 <div class="scMenuParent w-100">
+    <div id="MenuSlides" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div #carouselItem class="carousel-item active">
+                <div class="d-block w-100">
+                    <img class="w-100 scCarouselSlides" src="assets/images/dinner-01.jpg" />
+                    <div class="scSlideText">
+                        <h3 class="fst-italic"></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="scEvents pt-5 pb-5">
+        <div class="">
+            <div class="text-center">
+                <h3 class="scIndianRes fst-italic text-danger">Our menu</h3>
+                <h2 class="fw-bold scOurMenuHeader">MENU</h2>
+            </div>
+        </div>
+    </div>
+
     <div class="scMenuContainer d-flex align-items-center flex-column">
         <h3>Dinner Menu</h3>
         <div class="">
@@ -6,8 +28,8 @@
                 <div *ngIf="item.isMainDish">
                     <div class="d-flex">
                         <h2>{{item.name}}</h2>
-                    <img class="scDishImg" *ngIf="item.isHotDish" src="/assets/images/HotDish.png" />
-                    <img class="scDishImg ps-2" *ngIf="item.isFavDish" src="/assets/images/FavDish.png" />
+                    <img class="scDishImg" *ngIf="item.isHotDish" src="assets/images/HotDish.png" />
+                    <img class="scDishImg ps-2" *ngIf="item.isFavDish" src="assets/images/FavDish.png" />
                     </div>
                     <div class="d-flex align-items-end flex-column">
                         <p>Price: &#8377;{{item.price}}</p>
@@ -23,8 +45,8 @@
                 <div *ngIf="!item.isMainDish">
                     <div class="d-flex">
                         <h2>{{item.name}}</h2>
-                    <img class="scDishImg" *ngIf="item.isHotDish" src="/assets/images/HotDish.png" />
-                    <img class="scDishImg ps-2" *ngIf="item.isFavDish" src="/assets/images/FavDish.png" />
+                    <img class="scDishImg" *ngIf="item.isHotDish" src="assets/images/HotDish.png" />
+                    <img class="scDishImg ps-2" *ngIf="item.isFavDish" src="assets/images/FavDish.png" />
                     </div>
                     <div class="d-flex align-items-end flex-column">
                         <p>Price: &#8377;{{item.price}}</p>

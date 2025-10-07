@@ -1,5 +1,122 @@
-<div class="d-flex align-items-center flex-column">
-<h3>We are coming soon !!!</h3>
+<div class="scReservation">
+    <div id="ReservationSlides" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div #carouselItem class="carousel-item active">
+                <div class="d-block w-100">
+                    <img class="w-100 scCarouselSlides" src="assets/images/bg-intro-01.png" />
+                    <div class="scSlideText">
+                        <h3 class="fst-italic"></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<img class="ps-1" src="/assets/images/Reserved.png" class="scDishImg"/>
+    <div class="scEvents pt-5 pb-5">
+        <div class="">
+            <div class="text-center">
+                <h3 class="scIndianRes fst-italic text-danger">Reservation</h3>
+                <h2 class="fw-bold scOurMenuHeader">BOOK TABLE</h2>
+            </div>
+        </div>
+        <div class="scReserveFormContr mx-auto">
+            <div class="scReserveForm">
+                <mat-card>
+                    <!-- <span class="scFormHeader">BOOK TABLE</span> -->
+                    <mat-card-content>
+                        <form [formGroup]="ReservationForm" autocomplete="false">
+                            <mat-form-field>
+                                <mat-label>Name</mat-label>
+                                <input matInput formControlName="reservedByName" required>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Mobile number</mat-label>
+                                <input matInput formControlName="mobile" required>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Email</mat-label>
+                                <input matInput formControlName="email" required>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Party size</mat-label>
+                                <div class="d-flex">
+                                    <input matInput formControlName="guestCount" [(ngModel)]="GuestCount" readonly
+                                        [style.width]="GuestCount == 10 ? '23px' : '15px'">
+                                    <span>{{GuestDisplayValue}}</span>
+                                </div>
+                                <button matSuffix mat-mini-fab color="accent" class="scGuestButton"
+                                    (click)="AddGuestCount(false)" [disabled]="GuestCount==1">
+                                    <mat-icon>remove</mat-icon>
+                                </button>
+                                <button matSuffix mat-mini-fab color="accent" class="scGuestButton"
+                                    (click)="AddGuestCount(true)" [disabled]="GuestCount==10">
+                                    <mat-icon>add</mat-icon>
+                                </button>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Date</mat-label>
+                                <input matInput formControlName="reserveDate" [matDatepicker]="reserveAtPicker"
+                                    (click)="reserveAtPicker.open()" [min]="minDate" required>
+                                <mat-datepicker-toggle matSuffix [for]="reserveAtPicker"></mat-datepicker-toggle>
+                                <mat-datepicker #reserveAtPicker></mat-datepicker>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Preferred dining</mat-label>
+                                <mat-select required [formControl]="DiningTypeControl"
+                                    (selectionChange)="onChangeDiningType($event)">
+                                    <mat-option *ngFor="let diningType of arDiningType"
+                                        [value]="diningType.diningTypeId">{{diningType?.fDiningType}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Time</mat-label>
+                                <mat-select required [formControl]="TimeSlotControl"
+                                    (selectionChange)="onChangeTimeSlot($event)">
+                                    <mat-option *ngFor="let slot of arTimeSlot"
+                                        [value]="slot.timeSlotId">{{slot?.fTimeSlot}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <div class="text-center">
+                                <button type="submit" class="w-501" mat-flat-button color="primary"
+                                    (click)="reserveTable()">Book now!</button>
+                                <button type="button" class="w-501 ms-2" mat-flat-button color="primary"
+                                    (click)="resetForm()">Reset</button>
+                            </div>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+        <section>
+            <div class="container  pt-5 pb-3">
+                <div class="row">
+                    <div class="scIntro col-md-6 col-sm-12 col-xs-12">
+                        <div class="scIntroContent">
+                            <h3 class="fst-italic text-danger">Reserve Your Table Instantly – Call Our Toll-Free Number
+                            </h3>
+                            <p class="t-center m-b-22 ms-r-auto">
+                                Booking your dining experience is now just a call away! Simply dial our toll-free number
+                                <span class="text-danger">[+91 7373 622 555]</span>
+                                to reserve your table. Whether it’s a family dinner, special celebration, or casual
+                                outing, our team will assist you with date, time,
+                                and seating preferences—absolutely free of charge. Hassle-free reservations, guaranteed
+                                comfort.</p>
+                        </div>
+                    </div>
+                    <div class="scIntro col-md-6 col-sm-12 col-xs-12">
+                        <div class="scIntroContent">
+                            <h3 class="fst-italic text-danger">Event Booking</h3>
+                            <p class="t-center m-b-22 ms-r-auto">
+                                Planning a birthday party, corporate dinner, or family celebration? We’d love to host
+                                your special occasion! For event
+                                bookings and personalized arrangements, please contact us directly at <span
+                                    class="text-danger">[+91 7373 622 555]</span> .
+                                Our team will be happy to assist you with table reservations, menu customization, and
+                                event details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </div>

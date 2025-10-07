@@ -1,0 +1,53 @@
+<div id="ContactusSlides" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div #carouselItem class="carousel-item active">
+            <div class="d-block w-100">
+                <img class="w-100 scCarouselSlides" src="assets/images/Cafe-dinning.jpg" />
+                <div class="scSlideText">
+                    <h3 class="fst-italic"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="scEvents d-flex align-items-center flex-column pt-5 pb-5">
+    <div class="card ">
+        <div class="card-header">
+            <h3 class="scIndianRes fst-italic text-info"><span
+                    class="fw-bold">{{arBookingDetails.reservedByName}}</span>
+                , your reservation is confirmed !!!
+            </h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="row">Booking Id</th>
+                        <td>{{arBookingDetails.bookingCode}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Guest Name</th>
+                        <td>{{arBookingDetails.reservedByName}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Reserved on</th>
+                        <td>{{arBookingDetails.reserveDate}}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Guests</th>
+                        <td>{{arBookingDetails.guestCount}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Venue / Table</th>
+                        <td>{{arBookingDetails.diningType}}/{{arBookingDetails.tableNumber}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer">
+            <p class="fst-italic">Need to make changes? You can modify or cancel your booking up to 2 hours before your reserved time.</p>
+        </div>
+    </div>
+</div>

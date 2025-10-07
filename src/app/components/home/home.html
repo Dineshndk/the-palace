@@ -1,44 +1,165 @@
-<div class="ps-1">
+<div class="scHome">
+    <div id="HomeSlides" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button #carouselIndicators *ngFor="let carousel of arCarousels;let i=index" type="button"
+                data-bs-target="#HomeSlides" [attr.data-bs-slide-to]="i" aria-current="true"
+                aria-label="Slide 1"></button>
+        </div>
+        <div class="carousel-inner">
+            <div #carouselItem *ngFor="let carousel of arCarousels;index as iItem" class="carousel-item"
+                data-bs-interval="10000">
+                <!-- [ngClass]="{'active':(iItem==0)}>" -->
+                <div class="d-block w-100">
+                    <img class="w-100 scCarouselSlides" src="assets/images/{{ carousel.imageUrl }}.png" />
+                    <div class="scSlideText">
+                        <h3 class="fst-italic">Welcome to</h3>
+                        <h1 class="scTitle">The palace</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container  pt-5 pb-3">
+            <div class="row">
+                <div class="scIntro col-md-6 col-sm-12 col-xs-12">
+                    <div class="scIntroContent">
+                        <h3 class="scIndianRes fst-italic text-danger text-center">Indian restaurants</h3>
+                        <h2 class="fw-bold text-center scOurMenuHeader">WELCOME</h2>
+                        <p class="t-center m-b-22 size3 ms-r-auto">
+                            Your ultimate destination for refined
+                            luxury,
+                            unmatched hospitality, and timeless charm. Nestled in the heart of the city,
+                            our hotel offers an extraordinary stay experience that blends royal heritage with modern
+                            amenities.</p>
+                        <div class="text-center">
 
-<h2>Welcome to THE PALACE</h2>
+                            <a class="scOurStory" href="/menu">Our menu
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12 col-xs-12">
+                    <div class="mx-auto scIntroImgContainer">
+                        <img class="scIntroImg1" src="assets/images/our-story-01.jpg" />
 
-<h5 class="pt-3">Where Elegance Meets Comfort</h5>
-<p class="pt-1 text-justify">
-Step into <span class="bold">THE PALACE</span>, your ultimate destination for refined luxury, 
-unmatched hospitality, and timeless charm. Nestled in the heart of the city, 
-our hotel offers an extraordinary stay experience that blends royal heritage with modern amenities.</p>
-<div class="d-flex">
-    
-<img class="ps-1" src="/assets/images/Dish.png" class="scDishImg"/>
-<h2 class="ps-2">Dining at THE PALACE</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="pb-5" style="width: calc(100% - 20px);">
+        <div class="scDinningContainer pt-5">
+            <div class="row ps-3 pe-2">
+                <div *ngFor="let item of arDinningItems" class="col-md-4 col-sm-12 col-xs-12 pt-5">
+                    <div class="scDinninImgContainer">
+                        <img src="assets/images/{{ item.imageUrl }}" />
+                    </div>
 
-</div>
-<h5 class="pt-3">Where Elegance Meets Comfort</h5>
-<p class="pt-1 text-justify">
-Savor culinary delights prepared by our master chefs at our in-house restaurants.
- Whether it's authentic local flavors or international cuisine, every meal is a celebration.</p>
-</div>
-<ul>
-    <li><span class="fw-bold">The Royal Dine</span>- Fine dining with global flair</li>
-    <li><span class="fw-bold">Spice Court</span>- Traditional Indian delicacies</li>
-    <li><span class="fw-bold">The Garden Café</span>- Outdoor coffee & brunch spot</li>
-    <li><span class="fw-bold">SkyBar Lounge</span>- Rooftop cocktails with a view </li>
-</ul>
+                    <h3 class="fw-bold scOurStory">{{item.Title}}</h3>
 
-<div class="d-flex">
-    
-<img class="ps-1" src="/assets/images/FavDish.png" class="scDishImg"/>
-<h2 class="ps-2">Amenities & Services</h2>
+                    <p class="m-b-22 size3 ms-r-auto">
+                        {{item.Comments}}
+                    </p>
+                    <div class="">
+                        <a class="scOurStory" href="/menu">LEARN MORE
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scOurMenu pb-5">
+        <div class="">
+            <div class="text-center">
+                <h3 class="scIndianRes fst-italic text-danger">Discover</h3>
+                <h2 class="fw-bold scOurMenuHeader">Our menu</h2>
+            </div>
+            <div class="row ps-3 pe-2">
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-xs-12 pt-3">
+                            <div class="scDinninImgContainer scMenuItem scFirstMenu">
+                                <img src="assets/images/our-menu-01.png" />
+                                <button class="scBtnMenu">LUNCH</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12 pt-3">
+                            <div class="scDinninImgContainer scMenuItem scFirstMenu">
+                                <img src="assets/images/dinner-01.jpg" />
+                                <button class="scBtnMenu">DINNER</button>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 pt-2">
+                            <div class="scDinninImgContainer scMenuItem">
+                                <img src="assets/images/our-menu-05.jpg" />
+                                <button class="scBtnMenu" (click)="showSuccess()">HAPPY HOURS</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12 pt-3">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="scDinninImgContainer scMenuItem">
+                                <img src="assets/images/our-menu-08.png" />
+                                <button class="scBtnMenu">DRINKS</button>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 pt-2">
+                            <div class="scDinninImgContainer scMenuItem">
+                                <img src="assets/images/our-menu-10.png" />
+                                <button class="scBtnMenu">STARTERS</button>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 pt-2">
+                            <div class="scDinninImgContainer scMenuItem">
+                                <img src="assets/images/our-menu-16.png" />
+                                <button class="scBtnMenu">DESSERT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-</div>
+            </div>
+        </div>
+    </div>
+    <div class="scEvents pb-5">
+        <div class="">
+            <div class="text-center">
+                <h3 class="scIndianRes fst-italic text-danger">Upcoming events</h3>
+                <h2 class="fw-bold scOurMenuHeader">EVENTS</h2>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container  pt-5 pb-3">
+            <div class="row">
+                <div class="scIntro col-md-6 col-sm-12 col-xs-12">
+                    <div class="scIntroContent">
+                        <h3 class="scIndianRes fst-italic text-danger text-center">Reservation</h3>
+                        <h2 class="fw-bold text-center scOurMenuHeader">Book table</h2>
+                        <p class="t-center m-b-22 size3 ms-r-auto">
+                            Enjoy a seamless dining experience by booking your table in advance. Whether it’s a romantic dinner, a family gathering, or 
+                            a business meeting, our reservation service ensures your spot is ready when you arrive. 
+                            Choose your preferred date, time, and seating, and let us take care of the rest.</p>
+                        <div class="text-center">
 
-<p class="pt-1 text-justify">
-We ensure your stay is as comfortable as it is memorable.</p>
-<ul>
-    <li>Fine dining with global flair</li>
-    <li>24/7 Concierge Service</li>
-    <li>Luxurious Spa & Wellness Center</li>
-    <li>Rooftop Infinity Pool</li>
-    <li>High-Speed Wi-Fi</li>
-    <li>Banquet & Conference Halls</li>
-</ul>
+                            <a class="scOurStory" href="/reservation">More
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="mx-auto scIntroImgContainer">
+                        <img class="scIntroImg1" src="assets/images/Reservation-02.jpg" />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
