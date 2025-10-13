@@ -1,13 +1,3 @@
 {
-  "routes": {
-    "/the-palace": {},
-    "/the-palace/about": {},
-    "/the-palace/booking": {},
-    "/the-palace/contactus": {},
-    "/the-palace/home": {},
-    "/the-palace/login": {},
-    "/the-palace/menu": {},
-    "/the-palace/orderonline": {},
-    "/the-palace/reservation": {}
-  }
+  "routes": {}
 }
